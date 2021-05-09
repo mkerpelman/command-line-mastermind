@@ -21,7 +21,20 @@ class Board
         end
     end
 
-end
+    def update(guess_array, match_array, turn)
+        self.write_new_guess(guess_array, turn)
+        self.write_new_match(match_array, turn)
+    end
 
-x = Board.new
-x.display
+    private
+
+    def write_new_guess(array, turn)
+        @current_code_values[turn - 1] = array
+    end
+
+    def write_new_match(array, turn)
+        @current_matches[turn - 1] = array
+    end
+
+
+end

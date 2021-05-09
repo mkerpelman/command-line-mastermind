@@ -1,4 +1,4 @@
-# module Playable
+module Playable
 
     def compare_guess_to_master(guess_array, master_array)
         guess_array_copy = guess_array.clone
@@ -8,7 +8,7 @@
         { :exact => exact_matches, :approximate => approximate_matches }
     end
 
-    # private
+    private
 
     def calculate_exact_matches(guess_array, master_array)
         exact_matches = 0
@@ -26,4 +26,9 @@
         (modified_guess_array.filter { |n| n != 'skip'} & modified_master_array.filter { |n| n != 'skip' }).length
     end
 
-# end
+    def verify_code_validity(array)
+        array.size == 4 and array.all? { |number| (1..6).to_a.include? number }
+    end
+
+
+end

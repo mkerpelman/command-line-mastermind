@@ -9,7 +9,7 @@ class User
     def generate_master_code
         @master_code = generate_code("master code")
     end
-
+    
     def make_guess
         @current_guess = generate_code("guess")
     end

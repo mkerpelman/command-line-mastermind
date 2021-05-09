@@ -36,5 +36,4 @@ class Board
         @current_matches[turn - 1] = array
     end
 
-
 end

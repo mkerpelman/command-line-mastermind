@@ -5,7 +5,7 @@ module Playable
         master_array_copy = master_array.clone
         exact_matches = calculate_exact_matches(guess_array_copy, master_array_copy)
         approximate_matches = calculate_approximate_matches(guess_array_copy, master_array_copy)
-        { :exact => exact_matches, :approximate => approximate_matches }
+        [exact_matches, approximate_matches]
     end
 
     private

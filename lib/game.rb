@@ -4,7 +4,7 @@ require './lib/board.rb'
 
 class Game
 
-    attr_reader :turn_number, :current_guess, :current_match
+    attr_reader :turn_number, :current_guess, :current_matches
 
     def play
         @game_mode = self.select_game_mode
@@ -54,7 +54,7 @@ class Game
                 puts "The computer beat you. You suck!"
                 break
             else
-                @current_guess = @computer.make_guess(@turn_number)
+                @current_guess = @computer.make_guess(@turn_number, @current_matches)
                 @current_matches = @computer.compare_guess_to_master(@current_guess, @master_code)
                 @board.update(@current_guess, @current_matches, @turn_number)
                 system "clear"

@@ -31,8 +31,7 @@ class Game
     end
 
     def codebreaker
-        self.initialize_players
-        @board = Board.new
+        self.initialize_classes
         @master_code = @computer.generate_master_code
         while @turn_number <= 12
             if self.win?
@@ -51,9 +50,10 @@ class Game
         end
     end
 
-    def initialize_players
+    def initialize_classes
         @computer = Computer.new
         @user = User.new
+        @board = Board.new
     end
 
     def win?
